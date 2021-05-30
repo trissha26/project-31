@@ -12,6 +12,8 @@ var divisionHeight = 300;
 function setup() {
   createCanvas(500,800);
 
+ Engine.update(Engine);
+
   engine = Engine.create();
   world = Engine.world;
   ground = new Ground(width/2, height, width, 20);

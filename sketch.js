@@ -7,21 +7,25 @@ var particles = [];
 var plinkos = [];
 var divisions = [];
 var divisionHeight = 300;
+var b1, b2, b3, b4;
 
 
 function setup() {
   createCanvas(500,800);
 
- Engine.update(Engine);
+ 
 
   engine = Engine.create();
-  world = Engine.world;
-  ground = new Ground(width/2, height, width, 20);
+  world = engine.world;
+ 
 
+  b1 = new Ground(250, 790, 500, 20);
+  b2 = new Ground(495, 400, 20, 800);
+  b3 = new Ground(5, 400, 20, 800);
   
 
  for (var k = 0; k <=width; k = k + 80){
-  divisions.push(new Divisions(k, height-divisionHeight/2, 10, divvidionHeight));
+  divisions.push(new Divisions(k, height-divisionHeight/2, 10, divisionHeight));
 }
 
 for (var k = 0; k <=width; k = k + 160){
@@ -100,6 +104,10 @@ function draw() {
     particles.push(new Particles(random(width/2-10,width/2+10),10,10)); 
   
   } 
+
+  b1.display();
+  b2.display();
+  b3.display();
 
   drawSprites();
 
